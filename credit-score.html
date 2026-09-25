@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>Credit Score Analyzer | FINAI</title>
+  
+  <!-- Google Fonts -->
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap rel=stylesheet>
+  
+  <!-- Font Awesome -->
+  <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
+  
+  <!-- Custom Stylesheet -->
+  <link rel=stylesheet href=css/style.css>
+</head>
+<body>
+  <div class=page-wrapper>
+    <!-- Navigation Bar -->
+    <header class=navbar>
+      <div class=container nav-container>
+        <a href=index.html class=brand-logo>
+          <i class=fa-solid fa-shield-halved></i>
+          <span>FINAI</span>
+        </a>
+
+        <button class=nav-toggle aria-label=Toggle navigation>
+          <i class=fa-solid fa-bars></i>
+        </button>
+
+        <nav class=nav-menu>
+          <a href=index.html class=nav-link><i class=fa-solid fa-house></i> Home</a>
+          <a href=eligibility.html class=nav-link><i class=fa-solid fa-calculator></i> Eligibility</a>
+          <a href=credit-score.html class=nav-link active><i class=fa-solid fa-chart-line></i> Credit Score</a>
+          <a href=emi.html class=nav-link><i class=fa-solid fa-receipt></i> EMI</a>
+          <a href=tips.html class=nav-link><i class=fa-solid fa-lightbulb></i> Tips</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class=app-section>
+      <div class=container>
+        <div class=section-header>
+          <div class=section-tag>Credit Intelligence</div>
+          <h1 class=section-title>Credit Score Analyzer</h1>
+          <p class=section-desc>Assess your creditworthiness and understand how lenders categorize your credit profile.</p>
+        </div>
+
+        <div class=calculator-layout>
+          <!-- Input Form Panel -->
+          <div class=glass-card>
+            <form id=credit-score-form>
+              <div class=form-group>
+                <label for=credit-score-input class=form-label>Enter Credit Score (300 - 900)</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-gauge-high form-input-icon></i>
+                  <input type=number id=credit-score-input class=form-input placeholder=e.g. 780 min=300 max=900 required>
+                </div>
+                <div class=form-helper>Official scoring scale ranges between 300 (Lowest) and 900 (Highest).</div>
+              </div>
+
+              <!-- Score Classification Visual Guide -->
+              <div style=margin-top: 24px;>
+                <label class=form-label>Rating Classifications</label>
+                <div class=score-scale>
+                  <div class=score-bar poor title=300 - 649: Poor></div>
+                  <div class=score-bar good title=650 - 749: Good></div>
+                  <div class=score-bar excellent title=750 - 900: Excellent></div>
+                </div>
+                <div class=score-legend>
+                  <span>300 (Poor)</span>
+                  <span>650 (Good)</span>
+                  <span>750 - 900 (Excellent)</span>
+                </div>
+              </div>
+
+              <button type=submit class=btn btn-primary btn-block style=margin-top: 28px;>
+                <i class=fa-solid fa-magnifying-glass-chart></i> Analyze Credit Score
+              </button>
+            </form>
+          </div>
+
+          <!-- Result Panel -->
+          <div class=glass-card result-box>
+            <!-- Initial Empty State -->
+            <div id=result-placeholder class=result-placeholder>
+              <i class=fa-solid fa-chart-simple></i>
+              <h3>Credit Analysis Ready</h3>
+              <p>Enter your credit score to generate an instant standing assessment, borrower tier, and actionable recommendations.</p>
+            </div>
+
+            <!-- Result Content State -->
+            <div id=result-content class=result-content>
+              <div id=credit-status-badge class=result-badge badge-success>Excellent</div>
+              <div class=result-detail-label>Your Credit Score</div>
+              <div id=display-score class=result-metric-large>780</div>
+              
+              <div class=glass-panel style=margin: 16px 0; text-align: left;>
+                <h4 style=font-size: 0.875rem; color: var(--accent-cyan); margin-bottom: 6px;>
+                  <i class=fa-solid fa-circle-info></i> Assessment
+                </h4>
+                <p id=credit-assessment style=font-size: 0.875rem; color: var(--text-secondary);></p>
+              </div>
+
+              <div class=glass-panel style=margin-bottom: 20px; text-align: left;>
+                <h4 style=font-size: 0.875rem; color: var(--accent-cyan); margin-bottom: 6px;>
+                  <i class=fa-solid fa-lightbulb></i> Recommended Action
+                </h4>
+                <p id=credit-advice style=font-size: 0.875rem; color: var(--text-secondary);></p>
+              </div>
+
+              <a href=eligibility.html class=btn btn-secondary btn-block>
+                <i class=fa-solid fa-calculator></i> Check Loan Eligibility Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=footer>
+      <div class=container>
+        <div class=footer-grid>
+          <div>
+            <div class=brand-logo>
+              <i class=fa-solid fa-shield-halved></i>
+              <span>FINAI</span>
+            </div>
+            <p class=footer-desc>
+              Empowering consumers with AI-driven financial insights, automated loan qualification, and transparent credit analytics.
+            </p>
+          </div>
+          <div>
+            <h4 class=footer-heading>Calculators</h4>
+            <ul class=footer-links>
+              <li><a href=eligibility.html>Loan Eligibility</a></li>
+              <li><a href=credit-score.html>Credit Analyzer</a></li>
+              <li><a href=emi.html>EMI Calculator</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class=footer-heading>Resources</h4>
+            <ul class=footer-links>
+              <li><a href=tips.html>AI Financial Tips</a></li>
+              <li><a href=index.html>Platform Overview</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class=footer-bottom>
+          <p>&copy; 2026 FINAI AI Loan Eligibility Checker. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src=js/script.js></script>
+  <script src=js/credit-score.js></script>
+</body>
+</html>

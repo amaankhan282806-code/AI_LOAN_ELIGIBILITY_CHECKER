@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>EMI Calculator | FINAI</title>
+  
+  <!-- Google Fonts -->
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap rel=stylesheet>
+  
+  <!-- Font Awesome -->
+  <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
+  
+  <!-- Custom Stylesheet -->
+  <link rel=stylesheet href=css/style.css>
+</head>
+<body>
+  <div class=page-wrapper>
+    <!-- Navigation Bar -->
+    <header class=navbar>
+      <div class=container nav-container>
+        <a href=index.html class=brand-logo>
+          <i class=fa-solid fa-shield-halved></i>
+          <span>FINAI</span>
+        </a>
+
+        <button class=nav-toggle aria-label=Toggle navigation>
+          <i class=fa-solid fa-bars></i>
+        </button>
+
+        <nav class=nav-menu>
+          <a href=index.html class=nav-link><i class=fa-solid fa-house></i> Home</a>
+          <a href=eligibility.html class=nav-link><i class=fa-solid fa-calculator></i> Eligibility</a>
+          <a href=credit-score.html class=nav-link><i class=fa-solid fa-chart-line></i> Credit Score</a>
+          <a href=emi.html class=nav-link active><i class=fa-solid fa-receipt></i> EMI</a>
+          <a href=tips.html class=nav-link><i class=fa-solid fa-lightbulb></i> Tips</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class=app-section>
+      <div class=container>
+        <div class=section-header>
+          <div class=section-tag>Loan Planning</div>
+          <h1 class=section-title>EMI Calculator</h1>
+          <p class=section-desc>Plan your monthly repayments with the standard reducing-balance Equated Monthly Installment formula.</p>
+        </div>
+
+        <div class=calculator-layout>
+          <!-- Input Form Panel -->
+          <div class=glass-card>
+            <form id=emi-form>
+              <!-- Loan Amount -->
+              <div class=form-group>
+                <label for=loan-amount class=form-label>Loan Principal Amount (₹)</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-indian-rupee-sign form-input-icon></i>
+                  <input type=number id=loan-amount class=form-input placeholder=e.g. 500000 min=1000 required>
+                </div>
+                <div class=form-helper>Total borrowed principal value (P)</div>
+              </div>
+
+              <!-- Annual Interest Rate -->
+              <div class="form-group">
+                <label for="interest-rate" class="form-label">Annual Interest Rate (%)</label>
+                <div class="form-input-wrapper">
+                  <i class="fa-solid fa-percent form-input-icon"></i>
+                  <input type="number" step="0.01" id="interest-rate" class="form-input" placeholder="e.g. 10.5" min="0" max="50" required>
+                </div>
+                <div class="form-helper">Annual interest rate applied by the financial institution</div>
+              </div>
+
+              <!-- Loan Tenure -->
+              <div class=form-group>
+                <label for=loan-tenure class=form-label>Loan Tenure (Months)</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-calendar-days form-input-icon></i>
+                  <input type=number id=loan-tenure class=form-input placeholder=e.g. 60 min=1 max=360 required>
+                </div>
+                <div class=form-helper>Repayment period in months (e.g. 60 months = 5 years)</div>
+              </div>
+
+              <button type=submit class=btn btn-primary btn-block style=margin-top: 24px;>
+                <i class=fa-solid fa-calculator></i> Calculate EMI
+              </button>
+            </form>
+          </div>
+
+          <!-- Results Panel -->
+          <div class=glass-card result-box>
+            <!-- Initial Empty State -->
+            <div id=result-placeholder class=result-placeholder>
+              <i class=fa-solid fa-calculator></i>
+              <h3>Repayment Estimate</h3>
+              <p>Enter loan amount, interest rate, and tenure to compute your monthly installment and interest schedule.</p>
+            </div>
+
+            <!-- Result Content State -->
+            <div id=result-content class=result-content>
+              <div class=result-badge badge-success>Calculated Installment</div>
+              <div class=result-detail-label>Monthly EMI Payment</div>
+              <div id=res-emi-amount class=result-metric-large>₹0</div>
+
+              <div class=result-details-list>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Principal Amount</span>
+                  <span id=res-principal class=result-detail-value>₹0</span>
+                </div>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Total Interest Payable</span>
+                  <span id=res-total-interest class=result-detail-value>₹0</span>
+                </div>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Total Amount Payable</span>
+                  <span id=res-total-payable class=result-detail-value>₹0</span>
+                </div>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Tenure Duration</span>
+                  <span id=res-tenure-months class=result-detail-value>0 Months</span>
+                </div>
+              </div>
+
+              <a href=tips.html class=btn btn-secondary btn-block style=margin-top: 20px;>
+                <i class=fa-solid fa-lightbulb></i> View EMI Optimization Tips
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=footer>
+      <div class=container>
+        <div class=footer-grid>
+          <div>
+            <div class=brand-logo>
+              <i class=fa-solid fa-shield-halved></i>
+              <span>FINAI</span>
+            </div>
+            <p class=footer-desc>
+              Empowering consumers with AI-driven financial insights, automated loan qualification, and transparent credit analytics.
+            </p>
+          </div>
+          <div>
+            <h4 class=footer-heading>Calculators</h4>
+            <ul class=footer-links>
+              <li><a href=eligibility.html>Loan Eligibility</a></li>
+              <li><a href=credit-score.html>Credit Analyzer</a></li>
+              <li><a href=emi.html>EMI Calculator</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class=footer-heading>Resources</h4>
+            <ul class=footer-links>
+              <li><a href=tips.html>AI Financial Tips</a></li>
+              <li><a href=index.html>Platform Overview</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class=footer-bottom>
+          <p>&copy; 2026 FINAI AI Loan Eligibility Checker. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src=js/script.js></script>
+  <script src=js/emi.js></script>
+</body>
+</html>

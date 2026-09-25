@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>AI Financial Tips & Guidance | FINAI</title>
+  
+  <!-- Google Fonts -->
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap rel=stylesheet>
+  
+  <!-- Font Awesome -->
+  <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
+  
+  <!-- Custom Stylesheet -->
+  <link rel=stylesheet href=css/style.css>
+</head>
+<body>
+  <div class=page-wrapper>
+    <!-- Navigation Bar -->
+    <header class=navbar>
+      <div class=container nav-container>
+        <a href=index.html class=brand-logo>
+          <i class=fa-solid fa-shield-halved></i>
+          <span>FINAI</span>
+        </a>
+
+        <button class=nav-toggle aria-label=Toggle navigation>
+          <i class=fa-solid fa-bars></i>
+        </button>
+
+        <nav class=nav-menu>
+          <a href=index.html class=nav-link><i class=fa-solid fa-house></i> Home</a>
+          <a href=eligibility.html class=nav-link><i class=fa-solid fa-calculator></i> Eligibility</a>
+          <a href=credit-score.html class=nav-link><i class=fa-solid fa-chart-line></i> Credit Score</a>
+          <a href=emi.html class=nav-link><i class=fa-solid fa-receipt></i> EMI</a>
+          <a href=tips.html class=nav-link active><i class=fa-solid fa-lightbulb></i> Tips</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class=app-section>
+      <div class=container>
+        <div class=section-header>
+          <div class=section-tag>AI Intelligence</div>
+          <h1 class=section-title>AI Financial Tips & Guidance</h1>
+          <p class=section-desc>Practical financial strategies and intelligent guidance to optimize your credit profile, debt management, and savings goals.</p>
+        </div>
+
+        <!-- Interactive AI Prompt Box (Milestone Placeholder) -->
+        <div class=glass-card style=margin-bottom: 40px;>
+          <div style=display: flex; gap: 12px; flex-wrap: wrap; align-items: center;>
+            <div style=flex: 1; min-width: 260px; class=form-input-wrapper>
+              <i class=fa-solid fa-wand-magic-sparkles form-input-icon></i>
+              <input type=text id=ai-prompt-input class=form-input placeholder=Ask AI: e.g. How can I boost my credit score by 50 points in 3 months?>
+            </div>
+            <button type=button id=ai-ask-btn class=btn btn-primary>
+              <i class=fa-solid fa-paper-plane></i> Ask AI
+            </button>
+          </div>
+          <div id=ai-response-box class=glass-panel style=margin-top: 16px; display: none;></div>
+        </div>
+
+        <!-- 4 Core Financial Guidance Categories -->
+        <div class=tips-grid>
+          <!-- Card 1: Smart Savings -->
+          <div class=tip-card>
+            <div class=tip-header>
+              <div class=tip-icon>
+                <i class=fa-solid fa-piggy-bank></i>
+              </div>
+              <h3 class=tip-title>Smart Savings</h3>
+            </div>
+            <p style=font-size: 0.875rem; color: var(--text-secondary);>
+              Structured strategies to build long-term wealth, maintain contingency funds, and minimize frivolous expenditures.
+            </p>
+            <ul class=tip-points>
+              <li><strong>The 50/30/20 Rule:</strong> Allocate 50% of income to essentials, 30% to wants, and 20% directly into savings.</li>
+              <li><strong>Emergency Buffer:</strong> Maintain at least 3–6 months of living expenses in high-liquidity accounts.</li>
+              <li><strong>Automate Investments:</strong> Set recurring auto-debits on payday toward mutual funds, index funds, or fixed deposits.</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Improve Credit Score -->
+          <div class=tip-card>
+            <div class=tip-header>
+              <div class=tip-icon>
+                <i class=fa-solid fa-chart-line></i>
+              </div>
+              <h3 class=tip-title>Improve Credit Score</h3>
+            </div>
+            <p style=font-size: 0.875rem; color: var(--text-secondary);>
+              Proven steps to elevate your credit rating from average to top-tier (750+) for favorable lending terms.
+            </p>
+            <ul class=tip-points>
+              <li><strong>Credit Utilization &lt; 30%:</strong> Never spend more than 30% of your total assigned credit limit.</li>
+              <li><strong>Zero Late Payments:</strong> Payment history accounts for ~35% of your score; automate minimum dues.</li>
+              <li><strong>Avoid Frequent Inquiries:</strong> Spacing credit card and loan applications prevents hard inquiry penalties.</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Budget Management -->
+          <div class=tip-card>
+            <div class=tip-header>
+              <div class=tip-icon>
+                <i class=fa-solid fa-wallet></i>
+              </div>
+              <h3 class=tip-title>Budget Management</h3>
+            </div>
+            <p style=font-size: 0.875rem; color: var(--text-secondary);>
+              Keep tabs on ongoing cash flow, discretionary expenses, and monthly commitments to avoid debt traps.
+            </p>
+            <ul class=tip-points>
+              <li><strong>Track Recurring Subscriptions:</strong> Audit and cancel underutilized digital memberships and streaming services.</li>
+              <li><strong>Categorize Variable Costs:</strong> Review dining, shopping, and entertainment spends weekly.</li>
+              <li><strong>Debt-to-Income Discipline:</strong> Keep non-mortgage debt obligations below 20% of your net monthly earnings.</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: EMI Optimization -->
+          <div class=tip-card>
+            <div class=tip-header>
+              <div class=tip-icon>
+                <i class=fa-solid fa-sliders></i>
+              </div>
+              <h3 class=tip-title>EMI Optimization</h3>
+            </div>
+            <p style=font-size: 0.875rem; color: var(--text-secondary);>
+              Techniques to lower total interest outgo and pay off existing loans ahead of tenure.
+            </p>
+            <ul class=tip-points>
+              <li><strong>Annual Prepayments:</strong> Making just one extra EMI payment per year can cut multi-year loan tenures significantly.</li>
+              <li><strong>Balance Transfer:</strong> Refinance high-interest personal loans to lower interest options if your credit has improved.</li>
+              <li><strong>Step-Up EMI:</strong> Increase monthly EMI by 5–10% each year as your salary increases to extinguish debt faster.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=footer>
+      <div class=container>
+        <div class=footer-grid>
+          <div>
+            <div class=brand-logo>
+              <i class=fa-solid fa-shield-halved></i>
+              <span>FINAI</span>
+            </div>
+            <p class=footer-desc>
+              Empowering consumers with AI-driven financial insights, automated loan qualification, and transparent credit analytics.
+            </p>
+          </div>
+          <div>
+            <h4 class=footer-heading>Calculators</h4>
+            <ul class=footer-links>
+              <li><a href=eligibility.html>Loan Eligibility</a></li>
+              <li><a href=credit-score.html>Credit Analyzer</a></li>
+              <li><a href=emi.html>EMI Calculator</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class=footer-heading>Resources</h4>
+            <ul class=footer-links>
+              <li><a href=tips.html>AI Financial Tips</a></li>
+              <li><a href=index.html>Platform Overview</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class=footer-bottom>
+          <p>&copy; 2026 FINAI AI Loan Eligibility Checker. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src=js/script.js></script>
+  <script src=js/ai.js></script>
+</body>
+</html>

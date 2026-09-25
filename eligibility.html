@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>Loan Eligibility Checker | FINAI</title>
+  
+  <!-- Google Fonts -->
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap rel=stylesheet>
+  
+  <!-- Font Awesome -->
+  <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
+  
+  <!-- Custom Stylesheet -->
+  <link rel=stylesheet href=css/style.css>
+</head>
+<body>
+  <div class=page-wrapper>
+    <!-- Navigation Bar -->
+    <header class=navbar>
+      <div class=container nav-container>
+        <a href=index.html class=brand-logo>
+          <i class=fa-solid fa-shield-halved></i>
+          <span>FINAI</span>
+        </a>
+
+        <button class=nav-toggle aria-label=Toggle navigation>
+          <i class=fa-solid fa-bars></i>
+        </button>
+
+        <nav class=nav-menu>
+          <a href=index.html class=nav-link><i class=fa-solid fa-house></i> Home</a>
+          <a href=eligibility.html class=nav-link active><i class=fa-solid fa-calculator></i> Eligibility</a>
+          <a href=credit-score.html class=nav-link><i class=fa-solid fa-chart-line></i> Credit Score</a>
+          <a href=emi.html class=nav-link><i class=fa-solid fa-receipt></i> EMI</a>
+          <a href=tips.html class=nav-link><i class=fa-solid fa-lightbulb></i> Tips</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class=app-section>
+      <div class=container>
+        <div class=section-header>
+          <div class=section-tag>Instant Assessment</div>
+          <h1 class=section-title>Loan Eligibility Checker</h1>
+          <p class=section-desc>Enter your financial information below to determine your preliminary loan qualification and eligible funding amount.</p>
+        </div>
+
+        <div class=calculator-layout>
+          <!-- Input Form Panel -->
+          <div class=glass-card>
+            <form id=eligibility-form>
+              <!-- Applicant Name -->
+              <div class=form-group>
+                <label for=applicant-name class=form-label>Applicant Full Name</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-user form-input-icon></i>
+                  <input type=text id=applicant-name class=form-input placeholder=e.g. John Doe required>
+                </div>
+              </div>
+
+              <!-- Monthly Salary -->
+              <div class=form-group>
+                <label for=monthly-salary class=form-label>Monthly Salary (₹)</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-indian-rupee-sign form-input-icon></i>
+                  <input type=number id=monthly-salary class=form-input placeholder=e.g. 45000 min=0 required>
+                </div>
+                <div class=form-helper>Benchmark criteria: Monthly salary &gt; ₹30,000</div>
+              </div>
+
+              <!-- Credit Score -->
+              <div class=form-group>
+                <label for=credit-score class=form-label>Credit Score (300 - 900)</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-gauge-high form-input-icon></i>
+                  <input type=number id=credit-score class=form-input placeholder=e.g. 750 min=300 max=900 required>
+                </div>
+                <div class=form-helper>Benchmark criteria: Credit score &gt; 700</div>
+              </div>
+
+              <!-- Existing EMI Obligations -->
+              <div class=form-group>
+                <label for=existing-emi class=form-label>Existing Monthly EMI Obligations (₹)</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-money-bill-wave form-input-icon></i>
+                  <input type=number id=existing-emi class=form-input placeholder=e.g. 8000 min=0 required>
+                </div>
+                <div class=form-helper>Benchmark criteria: Existing EMI &lt; ₹20,000</div>
+              </div>
+
+              <!-- Applicant Age -->
+              <div class=form-group>
+                <label for=applicant-age class=form-label>Applicant Age (Years)</label>
+                <div class=form-input-wrapper>
+                  <i class=fa-solid fa-cake-candles form-input-icon></i>
+                  <input type=number id=applicant-age class=form-input placeholder=e.g. 28 min=18 max=100 required>
+                </div>
+                <div class=form-helper>Benchmark criteria: Applicant age &ge; 21 years</div>
+              </div>
+
+              <button type=submit class=btn btn-primary btn-block style=margin-top: 24px;>
+                <i class=fa-solid fa-circle-check></i> Check Eligibility
+              </button>
+            </form>
+          </div>
+
+          <!-- Results Panel -->
+          <div class=glass-card result-box>
+            <!-- Initial Empty State -->
+            <div id=result-placeholder class=result-placeholder>
+              <i class=fa-solid fa-file-invoice-dollar></i>
+              <h3>Eligibility Assessment</h3>
+              <p>Complete the application form and submit to view your detailed qualification decision and loan capacity.</p>
+            </div>
+
+            <!-- Result Content State -->
+            <div id=result-content class=result-content>
+              <div id=eligibility-status class=result-badge badge-success>Eligible for Loan</div>
+              <div class=result-detail-label>Maximum Eligible Loan Amount</div>
+              <div id=eligible-amount class=result-metric-large>₹9,00,000</div>
+              
+              <p id=eligibility-reason style=font-size: 0.875rem; color: var(--text-secondary); margin: 16px 0;></p>
+
+              <div class=result-details-list>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Applicant</span>
+                  <span id=res-applicant-name class=result-detail-value>-</span>
+                </div>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Monthly Salary</span>
+                  <span id=res-salary class=result-detail-value>-</span>
+                </div>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Credit Score</span>
+                  <span id=res-credit-score class=result-detail-value>-</span>
+                </div>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Existing EMI</span>
+                  <span id=res-emi class=result-detail-value>-</span>
+                </div>
+                <div class=result-detail-item>
+                  <span class=result-detail-label>Applicant Age</span>
+                  <span id=res-age class=result-detail-value>-</span>
+                </div>
+              </div>
+
+              <a href=emi.html class=btn btn-secondary btn-block style=margin-top: 20px;>
+                <i class=fa-solid fa-calculator></i> Calculate Repayment EMI
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class=footer>
+      <div class=container>
+        <div class=footer-grid>
+          <div>
+            <div class=brand-logo>
+              <i class=fa-solid fa-shield-halved></i>
+              <span>FINAI</span>
+            </div>
+            <p class=footer-desc>
+              Empowering consumers with AI-driven financial insights, automated loan qualification, and transparent credit analytics.
+            </p>
+          </div>
+          <div>
+            <h4 class=footer-heading>Calculators</h4>
+            <ul class=footer-links>
+              <li><a href=eligibility.html>Loan Eligibility</a></li>
+              <li><a href=credit-score.html>Credit Analyzer</a></li>
+              <li><a href=emi.html>EMI Calculator</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class=footer-heading>Resources</h4>
+            <ul class=footer-links>
+              <li><a href=tips.html>AI Financial Tips</a></li>
+              <li><a href=index.html>Platform Overview</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class=footer-bottom>
+          <p>&copy; 2026 FINAI AI Loan Eligibility Checker. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src=js/script.js></script>
+  <script src=js/eligibility.js></script>
+</body>
+</html>
