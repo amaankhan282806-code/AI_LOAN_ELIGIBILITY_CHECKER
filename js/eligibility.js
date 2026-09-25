@@ -71,6 +71,36 @@ document.addEventListener('DOMContentLoaded', () => {
           summaryReasonEl.textContent = `Criteria not met: ${reasons.join(', ')}.`;
         }
       }
+
+      // Secondary Operation: Save record to Google Sheets via Apps Script service
+      if (typeof saveEligibilityRecord === 'function') {
+        const eligibleAmount = isApproved ? salary * 20 : 0;
+        const syncStatusEl = document.getElementById('sheets-sync-status');
+        const syncMessageEl = document.getElementById('sheets-sync-message');
+
+        const recordPayload = {
+          type: 'eligibility',
+          name: name || 'Applicant',
+          salary: salary,
+          creditScore: creditScore,
+          existingEmi: existingEmi,
+          age: age,
+          result: isApproved ? 'Approved' : 'Rejected',
+          eligibleLoanAmount: eligibleAmount
+        };
+
+        saveEligibilityRecord(recordPayload).then((syncRes) => {
+          if (syncStatusEl && syncMessageEl) {
+            syncStatusEl.style.display = 'block';
+            syncMessageEl.textContent = syncRes.success ? 'Record saved' : 'Record saving unavailable';
+          }
+        }).catch(() => {
+          if (syncStatusEl && syncMessageEl) {
+            syncStatusEl.style.display = 'block';
+            syncMessageEl.textContent = 'Record saving unavailable';
+          }
+        });
+      }
     }
   });
 });

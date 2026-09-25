@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en>
 <head>
   <meta charset=UTF-8>
@@ -125,31 +125,36 @@
               
               <p id=eligibility-reason style=font-size: 0.875rem; color: var(--text-secondary); margin: 16px 0;></p>
 
-              <div class=result-details-list>
-                <div class=result-detail-item>
-                  <span class=result-detail-label>Applicant</span>
-                  <span id=res-applicant-name class=result-detail-value>-</span>
+              <div class="result-details-list">
+                <div class="result-detail-item">
+                  <span class="result-detail-label">Applicant</span>
+                  <span id="res-applicant-name" class="result-detail-value">-</span>
                 </div>
-                <div class=result-detail-item>
-                  <span class=result-detail-label>Monthly Salary</span>
-                  <span id=res-salary class=result-detail-value>-</span>
+                <div class="result-detail-item">
+                  <span class="result-detail-label">Monthly Salary</span>
+                  <span id="res-salary" class="result-detail-value">-</span>
                 </div>
-                <div class=result-detail-item>
-                  <span class=result-detail-label>Credit Score</span>
-                  <span id=res-credit-score class=result-detail-value>-</span>
+                <div class="result-detail-item">
+                  <span class="result-detail-label">Credit Score</span>
+                  <span id="res-credit-score" class="result-detail-value">-</span>
                 </div>
-                <div class=result-detail-item>
-                  <span class=result-detail-label>Existing EMI</span>
-                  <span id=res-emi class=result-detail-value>-</span>
+                <div class="result-detail-item">
+                  <span class="result-detail-label">Existing EMI</span>
+                  <span id="res-emi" class="result-detail-value">-</span>
                 </div>
-                <div class=result-detail-item>
-                  <span class=result-detail-label>Applicant Age</span>
-                  <span id=res-age class=result-detail-value>-</span>
+                <div class="result-detail-item">
+                  <span class="result-detail-label">Applicant Age</span>
+                  <span id="res-age" class="result-detail-value">-</span>
                 </div>
               </div>
 
-              <a href=emi.html class=btn btn-secondary btn-block style=margin-top: 20px;>
-                <i class=fa-solid fa-calculator></i> Calculate Repayment EMI
+              <!-- Secondary Sync Status -->
+              <div id="sheets-sync-status" style="display: none; margin-top: 14px; font-size: 0.75rem; color: var(--text-muted); text-align: center;">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span id="sheets-sync-message">Record saved</span>
+              </div>
+
+              <a href="emi.html" class="btn btn-secondary btn-block" style="margin-top: 16px;">
+                <i class="fa-solid fa-calculator"></i> Calculate Repayment EMI
               </a>
             </div>
           </div>
@@ -193,7 +198,10 @@
     </footer>
   </div>
 
-  <script src=js/script.js></script>
-  <script src=js/eligibility.js></script>
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/sheets.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/eligibility.js"></script>
 </body>
 </html>
